@@ -8,7 +8,7 @@ import pandas as pd
 # Configuration Selenium
 chrome_options = Options()
 chrome_options.add_argument("--headless")  # Mode sans interface
-chrome_service = Service("chemin/vers/chromedriver")  # Mets ton chemin ici
+chrome_service = Service("/windows")  # Mets ton chemin ici
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 # URL de recherche d'emploi
