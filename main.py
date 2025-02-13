@@ -33,8 +33,8 @@ job_list = driver.find_elements(By.CSS_SELECTOR, "ul.sc-hyBbbR.bFHmuL.ais-Hits-l
 jobs = []
 for job in job_list:
     try:
-        title = job.find_element(By.CSS_SELECTOR, "h3").text
-        company = job.find_element(By.CSS_SELECTOR, "span.sc-16r5pdw-0").text
+        title = job.find_element(By.CSS_SELECTOR, "div.sc-bXCLTC.sc-gMZepy.clOcbg").text
+        company = job.find_element(By.CSS_SELECTOR, "div.sc-bXCLTC fsJUzh").text
         link = job.find_element(By.TAG_NAME, "a").get_attribute("href")
         
         # Affiche les informations extraites pour vérification
