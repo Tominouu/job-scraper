@@ -33,7 +33,7 @@ print("li récupérés")
 jobs = []
 for job in jobs_elements:
     try:
-        title_element = job.find_element(By.CSS_SELECTOR, "div.sc-bXCLTC-sc-gMZepy-clOcbg")
+        title_element = job.find_element(By.CSS_SELECTOR, "div.sc-bXCLTC.sc-gMZepy.clOcbg")
         title = title_element.text if title_element else "Titre non disponible"
 
         # Affichage des résultats pour vérifier
