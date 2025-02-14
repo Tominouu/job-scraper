@@ -37,11 +37,13 @@ for job in jobs_elements:
         title = title_element.text if title_element else "Titre non disponible"
         entreprise_element = job.find_element(By.CSS_SELECTOR, "span.sc-fThUAz.jAWJFn.sc-fqbHDX.jsDoJd.wui-text")
         entreprise = entreprise_element.text if entreprise_element else "Entreprise non disponible"
+        lieu_element = job.find_element(By.CSS_SELECTOR, "span.sc-cKccrX.fgMjGS")
+        lieu = lieu_element.text if lieu_element else "Lieu non disponible"
 
         # Affichage des résultats pour vérifier
-        print(f"Titre: {title}, Entreprise: {entreprise}")
+        print(f"Titre: {title}, Entreprise: {entreprise}, Lieu: {lieu}")
         
-        jobs.append({"Titre": title, "Entreprise": entreprise})
+        jobs.append({"Titre": title,  "Entreprise": entreprise, "Lieu": lieu})
     except Exception as e:
         print("Erreur lors de l'extraction d'une offre:", e)
         continue
