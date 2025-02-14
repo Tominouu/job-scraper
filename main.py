@@ -34,13 +34,13 @@ jobs = []
 for job in job_list:
     try:
         title = job.find_element(By.CSS_SELECTOR, "div.sc-bXCLTC.sc-gMZepy.clOcbg").text
-        company = job.find_element(By.CSS_SELECTOR, "div.sc-bXCLTC fsJUzh").text
-        link = job.find_element(By.TAG_NAME, "a").get_attribute("href")
+        #company = job.find_element(By.CSS_SELECTOR, "div.sc-bXCLTC fsJUzh").text
+        #link = job.find_element(By.TAG_NAME, "a").get_attribute("href")
         
         # Affiche les informations extraites pour vérification
-        print(f"Titre: {title}, Entreprise: {company}, Lien: {link}")
+        print(f"Titre: {title}")#, Entreprise: {company}, Lien: {link}")
         
-        jobs.append({"Titre": title, "Entreprise": company, "Lien": link})
+        jobs.append({"Titre": title})#, "Entreprise": company, "Lien": link})
     except Exception as e:
         print("Erreur lors de l'extraction d'une offre:", e)
         continue
