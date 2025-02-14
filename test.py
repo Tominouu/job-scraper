@@ -28,11 +28,12 @@ except Exception as e:
 
 # Récupération de tous les éléments <li> dans la liste
 jobs_elements = job_list.find_elements(By.TAG_NAME, "li")
+print("li récupérés")
 
 jobs = []
 for job in jobs_elements:
     try:
-        title_element = job.find_element(By.CSS_SELECTOR, "h3")
+        title_element = job.find_element(By.CSS_SELECTOR, "div.sc-bXCLTC-sc-gMZepy-clOcbg")
         title = title_element.text if title_element else "Titre non disponible"
 
         # Affichage des résultats pour vérifier
