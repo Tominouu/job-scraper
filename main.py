@@ -4,7 +4,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
 import pandas as pd
 
 # Configuration Selenium
@@ -17,27 +16,32 @@ driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 search_url = "https://www.welcometothejungle.com/fr/jobs?query=python%20developer"
 driver.get(search_url)
 
-# Attente explicite pour que les résultats de recherche soient chargés
+# Attente explicite pour que la liste complète des offres soit chargée
 try:
-    WebDriverWait(driver, 10).until(
-        EC.presence_of_all_elements_located((By.CSS_SELECTOR, "ul.sc-hyBbbR.bFHmuL.ais-Hits-list"))
+    job_list = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "ul.sc-hyBbbR.ais-Hits-list"))
     )
     print("Page chargée avec succès.")
 except Exception as e:
     print("Erreur lors du chargement de la page:", e)
     driver.quit()
 
-# Récupération des offres
-job_list = driver.find_elements(By.CSS_SELECTOR, "ul.sc-hyBbbR.bFHmuL.ais-Hits-list")
+# Récupération de tous les éléments <li> dans la liste
+jobs_elements = job_list.find_elements(By.TAG_NAME, "li")
+print("li récupérés")
 
 jobs = []
-for job in job_list:
+for job in jobs_elements:
     try:
-        title = job.find_element(By.CSS_SELECTOR, "div.sc-bXCLTC.sc-gMZepy.clOcbg").text
-        # Affiche les informations extraites pour vérification
-        print(f"Titre: {title}")
+        title_element = job.find_element(By.CSS_SELECTOR, "div.sc-bXCLTC.sc-gMZepy.clOcbg")
+        title = title_element.text if title_element else "Titre non disponible"
+        entreprise_element = job.find_element(By.CSS_SELECTOR, "span.sc-fThUAz.jAWJFn.sc-fqbHDX.jsDoJd.wui-text")
+        entreprise = entreprise_element.text if entreprise_element else "Entreprise non disponible"
+
+        # Affichage des résultats pour vérifier
+        print(f"Titre: {title}, Entreprise: {entreprise}")
         
-        jobs.append({"Titre": title})
+        jobs.append({"Titre": title, "Entreprise": entreprise})
     except Exception as e:
         print("Erreur lors de l'extraction d'une offre:", e)
         continue
@@ -46,5 +50,5 @@ driver.quit()
 
 # Sauvegarde des offres en CSV
 df = pd.DataFrame(jobs)
-df.to_csv("offres.csv", index=False)
+df.to_csv("offres.csv", index=False, encoding='utf-8')
 print("Scraping terminé, offres enregistrées dans 'offres.csv' !")
