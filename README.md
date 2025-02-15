@@ -77,5 +77,5 @@ Un fichier CSV avec une structure comme ceci :
 ---
 
 🚀 *Bon Scraping!*  
-🐍 **Fait avec Python & Selenium** ❤️ test
+🐍 **Fait avec Python & Selenium** ❤️
 
