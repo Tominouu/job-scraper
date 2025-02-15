@@ -45,6 +45,7 @@ Lance le script avec :
 python main.py
 ```
 Les offres seront extraites et enregistrées dans **`offres.csv`** 📄
+
 Pour plus de confort je te conseilles de le lancer depuis le terminal🚀
 Penses bien à te rendre dans le bon dossier, puis exécute le programme
 ```bash
