@@ -1,4 +1,4 @@
-# 🚀 Job Scraper - Scraper d'offres d'emploi avec Selenium
+# 🚀 Job Scraper - Scraper d'offres d'emploi avec Selenium par Tom Leclercq
 
 Un script Python permettant de scraper les offres d'emploi de **Welcome to the Jungle** en utilisant **Selenium** et **pandas**. 📊  
 
