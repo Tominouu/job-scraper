@@ -72,6 +72,7 @@ Un fichier CSV avec une structure comme ceci :
 🔹 Ajouter la récupération des entreprises et des liens 🔗  
 🔹 Support multi-pages pour scraper plus d'annonces 📄  
 🔹 Exportation JSON en plus du CSV  
+🔹 Intégration web
 
 ---
 
