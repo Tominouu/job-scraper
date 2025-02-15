@@ -1,6 +1,6 @@
-# 🚀 Job Scraper WTTJ - Scraper d'offres d'emploi avec Selenium
+# 🚀 Job Scraper - Scraper d'offres d'emploi avec Selenium
 
-Un script Python permettant de scraper les offres d'emploi de **Welcome to the Jungle (WTTJ)** en utilisant **Selenium** et **pandas**. 📊  
+Un script Python permettant de scraper les offres d'emploi de **Welcome to the Jungle** en utilisant **Selenium** et **pandas**. 📊  
 
 🔍 **Fonctionnalités :**  
 ✔️ Scrape **toutes les annonces disponibles** sur une recherche spécifique  
@@ -14,8 +14,8 @@ Un script Python permettant de scraper les offres d'emploi de **Welcome to the J
 
 ### 1️⃣ **Cloner le repo**  
 ```bash
-git clone https://github.com/ton-utilisateur/job-scraper-wttj.git
-cd job-scraper-wttj
+git clone https://github.com/Tominouu/job-scraper.git
+cd job-scraper
 ```
 
 ### 2️⃣ **Créer un environnement virtuel** (optionnel mais recommandé)  
