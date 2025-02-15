@@ -14,13 +14,12 @@ driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
 # Demande de la query à l'utilisateur
 query = input("Entrez la query pour la recherche d'emploi (par exemple, 'python developer'): ")
-search_url = f"https://www.welcometothejungle.com/fr/jobs?query={query.replace(' ', '%20')}"
-
-# URL de recherche d'emploi
+lieu = input("Entrez le lieu pour la recherche d'emploi (par exemple, 'Paris'): ")
+search_url = f"https://www.welcometothejungle.com/fr/jobs?query={query.replace(' ', '%20')}&aroundQuery={lieu.replace(' ', '%20')}"
+#search_url = f"https://www.welcometothejungle.com/fr/jobs?query={query.replace(' ', '%20')}"
 #search_url = "https://www.welcometothejungle.com/fr/jobs?query=python%20developer"
 driver.get(search_url)
 
-# Attente explicite pour que la liste complète des offres soit chargée
 try:
     job_list = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, "ul.sc-hyBbbR.ais-Hits-list"))
