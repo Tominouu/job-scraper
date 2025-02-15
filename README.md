@@ -59,11 +59,7 @@ python main.py
 ---
 
 ## 🛠️ Configuration  
-Si besoin, modifie l'URL de recherche dans `main.py` :  
-```python
-search_url = "https://www.welcometothejungle.com/fr/jobs?query=python%20developer"
-```
-Tu peux changer le **mot-clé de recherche** en modifiant la query dans l'URL 🔎  
+Suis les questions que te poses le programme après exécution  
 
 ---
 
