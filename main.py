@@ -12,8 +12,12 @@ chrome_options = Options()
 chrome_service = Service("C:/chromedriver.exe")  # Mets ton chemin ici
 driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
+# Demande de la query à l'utilisateur
+query = input("Entrez la query pour la recherche d'emploi (par exemple, 'python developer'): ")
+search_url = f"https://www.welcometothejungle.com/fr/jobs?query={query.replace(' ', '%20')}"
+
 # URL de recherche d'emploi
-search_url = "https://www.welcometothejungle.com/fr/jobs?query=python%20developer"
+#search_url = "https://www.welcometothejungle.com/fr/jobs?query=python%20developer"
 driver.get(search_url)
 
 # Attente explicite pour que la liste complète des offres soit chargée
