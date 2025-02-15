@@ -18,7 +18,7 @@ git clone https://github.com/Tominouu/job-scraper.git
 cd job-scraper
 ```
 
-### 2️⃣ **Créer un environnement virtuel** (optionnel mais recommandé)  
+### 2️⃣ **Créer un environnement virtuel** (optionnel)  
 ```bash
 python -m venv venv
 source venv/bin/activate  # macOS/Linux
