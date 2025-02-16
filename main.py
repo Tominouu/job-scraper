@@ -17,8 +17,6 @@ lieu = input("Entrez le lieu pour la recherche d'emploi (par exemple, 'Paris'): 
 radius = input("Entrez le rayon de recherche (par exemple, '10km'): ")
 contract = input("Entrez le type de contrat (par exemple, 'internship=stage, apprenticeship=alternance, full_time=CDI'): ")
 search_url = f"https://www.welcometothejungle.com/fr/jobs?query={query.replace(' ', '%20')}&refinementList%5Boffices.country_code%5D%5B%5D=FR&page=1&aroundLatLng=44.84044%2C-0.5805&contract_type%5D%5B%5D={contract.replace(' ', '%20')}&aroundRadius={radius.replace(' ', '%20')}&aroundQuery={lieu.replace(' ', '%20')}"
-#search_url = f"https://www.welcometothejungle.com/fr/jobs?query={query.replace(' ', '%20')}"
-#search_url = "https://www.welcometothejungle.com/fr/jobs?query=python%20developer"
 driver.get(search_url)
 
 try:
