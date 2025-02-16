@@ -4,9 +4,9 @@ Un script Python permettant de scraper les offres d'emploi de **Welcome to the J
 
 🔍 **Fonctionnalités :**  
 ✔️ Scrape **toutes les annonces disponibles** sur une recherche spécifique  
-✔️ Extraction du **titre du poste** et sauvegarde en CSV  
+✔️ Extraction du **titre du poste, nom de l'entreprise, lieu, lien vers l'annonce** et sauvegarde en CSV  
 ✔️ Attente dynamique pour un **scraping plus robuste**  
-✔️ 📂 Fichier CSV exporté : `offres.csv`  
+✔️ 📂 Fichier CSV exporté : `offres.csv`, possibilité de l'intégrer dans Excel, Google Sheets 
 
 ---
 
